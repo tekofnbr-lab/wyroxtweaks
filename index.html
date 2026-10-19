@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WyroxTweaks – Optimisation PC Gaming, Windows et BIOS</title>
+<meta name="description" content="WyroxTweaks : optimisation de PC gaming, Windows optimisé, réglages BIOS et tweaks de latence. Packs à partir de 10 €.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="WyroxTweaks – Optimisation PC Gaming">
+<meta property="og:description" content="Windows optimisé, réglages BIOS et tweaks de latence. Packs à partir de 10 €.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Cpath d='M12 16h10l10 28 10-28h10L36 52h-8z' fill='%23e11d2e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--panel:#0d0d0d;--line:#2a1114;--red:#e11d2e;--red-dark:#9b111e;--text:#f2f2f2;--muted:#a3a3a3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Barlow Condensed",Impact,sans-serif;line-height:1.05;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:12px}
+.sub{color:var(--muted);max-width:60ch;margin-bottom:36px}
+
+header{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 1.5rem "Barlow Condensed",sans-serif}
+.logo b{color:var(--red)}
+nav{display:flex;gap:22px;font-size:.92rem;color:var(--muted)}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:600;padding:12px 24px;border-radius:6px;border:1px solid var(--red);transition:background .2s}
+.btn:hover{background:var(--red-dark)}
+.btn.ghost{background:transparent;border-color:#444}
+.btn.ghost:hover{border-color:var(--red);background:transparent}
+
+.hero{padding:96px 0 80px;background:radial-gradient(ellipse 70% 60% at 50% 0,rgba(225,29,46,.22),transparent 70%)}
+.hero h1{font-size:clamp(3rem,10vw,6.5rem);font-weight:800;max-width:14ch}
+.hero h1 span{color:var(--red)}
+.hero p{color:var(--muted);max-width:56ch;margin:20px 0 32px;font-size:1.1rem}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px}
+.box h3{font-size:1.4rem;margin-bottom:8px}
+.box p{color:var(--muted);font-size:.95rem}
+
+.pack{display:flex;flex-direction:column}
+.pack.best{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 10px 40px rgba(225,29,46,.18)}
+.tag{align-self:flex-start;background:var(--red);font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;margin-bottom:12px}
+.price{font:800 3.4rem "Barlow Condensed",sans-serif;color:var(--red);margin:6px 0 14px}
+.pack ul{list-style:none;margin-bottom:24px;flex:1}
+.pack li{padding:7px 0 7px 26px;position:relative;font-size:.95rem;border-bottom:1px solid #1a1a1a}
+.pack li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:700}
+.pack .btn{text-align:center}
+
+.steps{counter-reset:s}
+.steps .box{position:relative;padding-top:44px}
+.steps .box::before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:24px;font:800 1.6rem "Barlow Condensed",sans-serif;color:var(--red)}
+
+details{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+summary{cursor:pointer;padding:16px 20px;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--red);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+
+.contact{text-align:center;background:linear-gradient(180deg,transparent,rgba(225,29,46,.12))}
+.contact .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+@media(max-width:700px){nav{display:none}section{padding:56px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ===== Effets ===== */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+#fx{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.7}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(transparent,var(--bg));z-index:0}
+.hero h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero p{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+.hero .cta{animation:rise .9s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero h1 span{text-shadow:0 0 28px rgba(225,29,46,.55)}
+.btn{position:relative;overflow:hidden}
+.btn:not(.ghost)::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:shine 3.4s infinite}
+@keyframes shine{0%,60%{left:-80%}100%{left:140%}}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(225,29,46,.35)}
+.btn{transition:background .2s,transform .2s,box-shadow .2s}
+.box{position:relative;transition:transform .25s,border-color .25s,box-shadow .25s}
+.box::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(225,29,46,.16),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+.box:hover{transform:translateY(-4px);border-color:var(--red)}
+.box:hover::before{opacity:1}
+.steps .box::before{all:unset}
+.steps .box::before{counter-increment:s;content:counter(s);position:absolute;top:14px;left:24px;font:800 1.6rem "Barlow Condensed",sans-serif;color:var(--red)}
+.pack.best{animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 1px var(--red),0 10px 60px rgba(225,29,46,.38)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--red);z-index:20;box-shadow:0 0 10px var(--red)}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(225,29,46,.13),transparent 65%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);left:-400px;top:-400px}
+main,header,footer{position:relative;z-index:1}
+nav a{position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--red);transition:width .25s}
+nav a:hover::after{width:100%}
+@media(hover:none){#glow{display:none}}
+@media(prefers-reduced-motion:reduce){
+ .hero h1,.hero p,.hero .cta,.pack.best,.btn::after{animation:none!important}
+ .rv{opacity:1;transform:none;transition:none}#fx,#glow{display:none}
+}
+
+/* ===== Survol réactif partout ===== */
+.btn::before{content:"";position:absolute;inset:0;background:radial-gradient(130px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.btn.ghost::before{background:radial-gradient(130px circle at var(--mx,50%) var(--my,50%),rgba(225,29,46,.35),transparent 65%)}
+.btn:hover::before{opacity:1}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.ghost:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 8px 24px rgba(225,29,46,.3)}
+details{position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+details::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(225,29,46,.14),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+details:hover{transform:translateY(-3px);border-color:var(--red);box-shadow:0 8px 28px rgba(225,29,46,.18)}
+details:hover::before,details[open]::before{opacity:1}
+summary{transition:color .2s}
+summary:hover{color:var(--red)}
+.logo{transition:text-shadow .25s,transform .25s}
+.logo:hover{text-shadow:0 0 18px rgba(225,29,46,.8);transform:scale(1.04)}
+nav a{transition:color .2s,text-shadow .2s}
+nav a:hover{color:#fff;text-shadow:0 0 12px rgba(225,29,46,.9)}
+.box:hover{box-shadow:0 8px 28px rgba(225,29,46,.18)}
+</style>
+</head>
+<body>
+
+<div id="bar"></div><div id="glow"></div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="WyroxTweaks, accueil">WYROX<b>TWEAKS</b></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#methode">Méthode</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="#contact">Réserver</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1>Un PC plus rapide, <span id="tw">plus réactif.</span></h1>
+    <p>J'optimise ton PC gaming directement sur ta machine : Windows propre, pilotes à jour, réglages BIOS et latence réduite. Résultat : moins de micro-saccades, des temps de réponse plus courts et un système stable.</p>
+    <div class="cta">
+      <a class="btn" href="#tarifs">Voir les packs</a>
+      <a class="btn ghost" href="#services">Ce qui est inclus</a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>Ce que comprend le service</h2>
+    <p class="sub">Chaque pack reprend tout ou partie de cette liste. Je travaille directement sur ton PC, étape par étape.</p>
+    <div class="grid g3">
+      <div class="box"><h3>Windows optimisé</h3><p>Installation propre d'un Windows allégé, sans logiciels inutiles, puis optimisation complète du système.</p></div>
+      <div class="box"><h3>Registre Windows</h3><p>Réglages du registre pour améliorer la réactivité du système et réduire les processus superflus.</p></div>
+      <div class="box"><h3>Pilotes</h3><p>Installation et optimisation des pilotes dont ta machine a besoin : carte graphique, chipset, réseau, audio.</p></div>
+      <div class="box"><h3>Logiciels</h3><p>Réglage de tes logiciels du quotidien : Discord, Spotify, OBS, Steam et autres.</p></div>
+      <div class="box"><h3>Énergie et alimentation</h3><p>Désactivation des économies d'énergie qui brident les performances et plan d'alimentation personnalisé.</p></div>
+      <div class="box"><h3>Mode Jeu et latence</h3><p>Configuration du Mode Jeu et des réglages qui réduisent la latence d'entrée et d'affichage.</p></div>
+      <div class="box"><h3>Stockage</h3><p>Optimisation de tes SSD et disques durs pour de meilleurs temps d'accès et une durée de vie préservée.</p></div>
+      <div class="box"><h3>BIOS et overclocking</h3><p>Réglages BIOS optimisés et overclocking adapté à ta configuration, avec surveillance des températures et de la stabilité.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="wrap">
+    <h2>Tarifs</h2>
+    <p class="sub">Trois packs, un prix fixe. Pas de frais cachés.</p>
+    <div class="grid g3">
+
+      <article class="box pack">
+        <h3>Tweaks latence</h3>
+        <div class="price">10€</div>
+        <ul>
+          <li>Mode Jeu et réduction de la latence</li>
+          <li>Désactivation des économies d'énergie</li>
+          <li>Plan d'alimentation personnalisé</li>
+          <li>Optimisation du registre</li>
+        </ul>
+        <a class="btn ghost" href="#contact">Choisir ce pack</a>
+      </article>
+
+      <article class="box pack">
+        <h3>Windows</h3>
+        <div class="price">10€</div>
+        <ul>
+          <li>Installation d'un Windows optimisé</li>
+          <li>Optimisation complète de Windows</li>
+          <li>Pilotes requis installés et optimisés</li>
+          <li>Optimisation des logiciels (Discord, Spotify, OBS, Steam…)</li>
+          <li>Optimisation du stockage (SSD, HDD)</li>
+        </ul>
+        <a class="btn ghost" href="#contact">Choisir ce pack</a>
+      </article>
+
+      <article class="box pack best">
+        <span class="tag">Pack complet</span>
+        <h3>Windows + BIOS + Tweaks</h3>
+        <div class="price">30€</div>
+        <ul>
+          <li>Tout le pack Windows</li>
+          <li>Tout le pack Tweaks latence</li>
+          <li>Réglages BIOS optimisés</li>
+          <li>Overclocking adapté à ta configuration</li>
+          <li>Tests de stabilité et de températures</li>
+        </ul>
+        <a class="btn" href="#contact">Choisir ce pack</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="wrap">
+    <h2>Comment ça se passe</h2>
+    <p class="sub">Une intervention simple, du premier message jusqu'à ton premier lancement de jeu.</p>
+    <div class="grid g3 steps">
+      <div class="box"><h3>Tu me contactes</h3><p>On échange sur ta configuration, ton usage (jeux, stream, montage) et le pack qui te convient.</p></div>
+      <div class="box"><h3>J'optimise ton PC</h3><p>Je me connecte à ta machine ou on se retrouve sur place, puis j'applique chaque réglage et je vérifie.</p></div>
+      <div class="box"><h3>Tu testes</h3><p>On vérifie ensemble la stabilité et la réactivité. Tu repars avec un PC prêt à jouer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions fréquentes</h2>
+    <p class="sub">Les réponses avant de réserver.</p>
+    <details><summary>Est-ce que je perds mes fichiers ?</summary><p>Une réinstallation de Windows efface le disque système. Avant de commencer, on sauvegarde ensemble tes données importantes.</p></details>
+    <details><summary>Faut-il une licence Windows ?</summary><p>Oui, Windows doit être activé avec une licence valide. Si tu n'en as pas, on en parle avant l'intervention.</p></details>
+    <details><summary>L'overclocking est-il risqué ?</summary><p>Tout réglage de fréquence ou de tension comporte une part de risque. Je choisis des valeurs adaptées à ta configuration et je teste les températures et la stabilité avant de te rendre le PC.</p></details>
+    <details><summary>Combien de FPS vais-je gagner ?</summary><p>Ça dépend de ta machine et de l'état de départ. Je ne promets pas de chiffre : le gain porte surtout sur la fluidité, la latence et la stabilité.</p></details>
+    <details><summary>Comment je paie ?</summary><p>Le moyen de paiement est convenu avec toi au moment de la réservation, avant le début de l'intervention.</p></details>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Prêt à optimiser ton PC ?</h2>
+    <p class="sub" style="margin:0 auto">Dis-moi ta configuration et le pack qui t'intéresse, je te réponds rapidement.</p>
+    <div class="cta">
+      <!-- Remplace les liens ci-dessous par les tiens -->
+      <a class="btn" href="https://discord.gg/TON-LIEN">Me contacter sur Discord</a>
+      <a class="btn ghost" href="mailto:ton@email.fr">Envoyer un e-mail</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="y"></span> WyroxTweaks – Optimisation PC. Tous droits réservés.</div>
+</footer>
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+(function(){
+var calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+/* Barre de progression */
+var bar=document.getElementById("bar");
+addEventListener("scroll",function(){
+  var h=document.documentElement;
+  bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+},{passive:true});
+
+/* Apparition au scroll */
+var items=document.querySelectorAll(".box,.sub,details,section h2");
+items.forEach(function(el,i){el.classList.add("rv");el.style.transitionDelay=(i%4)*70+"ms"});
+function done(el){el.classList.remove("rv","in");el.style.transitionDelay=""}
+if("IntersectionObserver" in window&&!calm){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){var el=e.target;el.classList.add("in");io.unobserve(el);setTimeout(function(){done(el)},1100)}
+  })},{threshold:.15});
+  items.forEach(function(el){io.observe(el)});
+}else{items.forEach(done)}
+
+/* Lueur sous la souris + effet sur les cartes */
+var glow=document.getElementById("glow");
+addEventListener("pointermove",function(e){
+  glow.style.left=e.clientX+"px";glow.style.top=e.clientY+"px";
+  var b=e.target.closest&&e.target.closest(".box,.btn,details");
+  if(b){var r=b.getBoundingClientRect();
+    b.style.setProperty("--mx",(e.clientX-r.left)+"px");
+    b.style.setProperty("--my",(e.clientY-r.top)+"px")}
+},{passive:true});
+
+/* Texte qui s'écrit */
+var tw=document.getElementById("tw");
+if(!calm){
+  var words=["plus réactif.","plus fluide.","prêt à jouer."],w=0,c=words[0].length,del=true;
+  function tick(){
+    if(del){c--;if(c<=0){del=false;w=(w+1)%words.length;c=0}}
+    else{c++;if(c>=words[w].length){del=true;tw.textContent=words[w];return setTimeout(tick,2200)}}
+    tw.textContent=words[w].slice(0,c)||"\u00a0";
+    setTimeout(tick,del?35:70);
+  }
+  setTimeout(tick,2200);
+}
+
+/* Particules rouges (canvas) */
+var cv=document.getElementById("fx");
+if(cv&&!calm){
+  var x=cv.getContext("2d"),W,H,P=[],mx=-999,my=-999;
+  function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;
+    P=[];var n=Math.min(70,Math.floor(W/16));
+    for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+  size();addEventListener("resize",size);
+  cv.parentNode.addEventListener("pointermove",function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+  (function draw(){
+    x.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){
+      var a=P[i];a.x+=a.vx;a.y+=a.vy;
+      if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
+      x.fillStyle="rgba(225,29,46,.8)";x.beginPath();x.arc(a.x,a.y,1.6,0,6.3);x.fill();
+      for(var j=i+1;j<P.length;j++){
+        var b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<120){x.strokeStyle="rgba(225,29,46,"+(.28*(1-d/120))+")";x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+      }
+      var dm=Math.hypot(a.x-mx,a.y-my);
+      if(dm<160){x.strokeStyle="rgba(255,80,90,"+(.6*(1-dm/160))+")";x.beginPath();x.moveTo(a.x,a.y);x.lineTo(mx,my);x.stroke()}
+    }
+    requestAnimationFrame(draw);
+  })();
+}
+})();
+</script>
+</body>
+</html>
